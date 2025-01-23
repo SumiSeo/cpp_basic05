@@ -5,11 +5,7 @@
 
 class Bureaucrat
 {
-
     public:
-        static int _maxGrade;
-        static int _minGrade;
-        
         Bureaucrat(void);
         Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat &original);
@@ -19,12 +15,14 @@ class Bureaucrat
     protected:
     
     private:
-        std::string const _name;
+        const static int _minGrade;
+        const static int _maxGrade;
+        std::string _name;
         int _grade;
         void GradeTooHighException();
         void GradeTooLowException();
         std::string getName();
-        std::string getGrade();
+        int getGrade();
         void increGrade();
         void decreGrade();
         void printGrade();

@@ -1,20 +1,17 @@
 #include "Bureaucrat.hpp"
 
 
-
 Bureaucrat::Bureaucrat(void)
 {
-    this->_minGrade = 1;
-    this->_maxGrade = 150;
-
+    
 };
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string const name, int grade)
 {
-    this->_minGrade = 1;
-    this->_maxGrade = 150;
+    
     this->_name = name;
     this->_grade = grade;
+    printGrade();
 };
 
 Bureaucrat::Bureaucrat(const Bureaucrat &original)
@@ -35,7 +32,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &original)
     return *this;
 };
 
-~Bureaucrat::Bureaucrat(void)
+Bureaucrat::~Bureaucrat(void)
 {
 
 };
@@ -53,26 +50,26 @@ void Bureaucrat::GradeTooLowException()
 
 std::string Bureaucrat::getName()
 {
-
+    return this->_name;
 };
 
-std::string Bureaucrat::getGrade()
+int Bureaucrat::getGrade()
 {
-
+    return this->_grade;
 };
 
 void Bureaucrat::increGrade()
 {
-
+    this->_grade++;
 };
 
 void Bureaucrat::decreGrade()
 {
-
+    this->_grade--;
 };
 
 void Bureaucrat::printGrade()
 {
-
+    std::cout << this->_name <<", bureaucrat grade " << this->_grade <<std::endl;
 };
 
