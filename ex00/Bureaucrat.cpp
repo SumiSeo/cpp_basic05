@@ -10,8 +10,11 @@ Bureaucrat::Bureaucrat(std::string const name, int grade)
 {
     
     this->_name = name;
-    this->_grade = grade;
-    printGrade();
+    this->_grade += grade;
+    if(this->_grade > _maxGrade)
+        throw Bureaucrat::GradeTooHighException();
+    else if(this->_grade <_minGrade)
+        throw Bureaucrat::GradeTooLowException();
 };
 
 Bureaucrat::Bureaucrat(const Bureaucrat &original)
@@ -37,17 +40,15 @@ Bureaucrat::~Bureaucrat(void)
 
 };
 
-
-void Bureaucrat::GradeTooHighException()
+const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 {
+    return "Grade too high...";
+}
 
-};
-
-void Bureaucrat::GradeTooLowException()
+const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-
-};
-
+    return "Grade too row...";
+}
 std::string Bureaucrat::getName()
 {
     return this->_name;

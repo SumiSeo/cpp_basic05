@@ -1,15 +1,25 @@
 #include "Bureaucrat.hpp"
+#include "iostream"
 
 int main()
 {
     std::cout <<"Bureacrat"<<std::endl;
-    Bureaucrat b1("sumi",1);
     try
     {
-    /* do some stuff with bureaucrats */
+        try
+        {
+            Bureaucrat b1("sumi",151);
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << "HERE :"<< e.what() << std::endl;;
+        }
+      
     }
-    catch (std::exception & e)
+    catch(const std::exception& e)
     {
-    /* handle exception */
+        /* handle exception */
+         // std::cout<< "Exception check : " << e-><<std::endl;
+        std::cout << " error: "<<std::endl;
     }
 }
