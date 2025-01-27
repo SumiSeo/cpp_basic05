@@ -8,13 +8,14 @@ Bureaucrat::Bureaucrat(void)
 
 Bureaucrat::Bureaucrat(std::string const name, int grade)
 {
-    
+
     this->_name = name;
-    this->_grade += grade;
+    this->_grade = 0 + grade;
     if(this->_grade > _maxGrade)
         throw Bureaucrat::GradeTooHighException();
     else if(this->_grade <_minGrade)
         throw Bureaucrat::GradeTooLowException();
+
 };
 
 Bureaucrat::Bureaucrat(const Bureaucrat &original)
@@ -54,14 +55,11 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 void Bureaucrat::increGrade()
 {
     this->_grade++;
-    std::cout<<"this : "<< this->getName() << this->getGrade()<<std::endl;
 };
 
 void Bureaucrat::decreGrade()
 {
     this->_grade--;
-    std::cout<<"this : "<< this->getName() << this->getGrade()<<std::endl;
-
 };
 
 void Bureaucrat::printGrade()

@@ -3,20 +3,20 @@
 
 int main()
 {
-    std::cout <<"Bureacrat"<<std::endl;
     try
     {
         try
         {
-            Bureaucrat test("test",2);
+            Bureaucrat test("test",151);
             std::cout << test << std::endl;
 
 
         }
         catch(const std::exception& e)
         {
-            std::cerr << e.what() << std::endl;;
-        }
+            std::cerr << e.what() << std::endl;
+            // throw e;
+        }   
         
         Bureaucrat a("a",2);
         Bureaucrat b("b",3);
