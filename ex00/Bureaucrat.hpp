@@ -1,11 +1,12 @@
 #ifndef BUREAUCRAT__HPP
 #define BUREAUCRAT__HPP
 
-#include "iostream"
+# include <iostream>
 
 class Bureaucrat
 {
     public:
+        friend     std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
         const static int _minGrade = 1;
         const static int _maxGrade = 150;
         Bureaucrat(void);
@@ -13,11 +14,12 @@ class Bureaucrat
         Bureaucrat(const Bureaucrat &original);
         Bureaucrat &operator=(const Bureaucrat &original);
         ~Bureaucrat(void);
-        std::string getName();
-        int getGrade();
+        const std::string  &getName() const;
+        int getGrade() const;
         void increGrade();
         void decreGrade();
         void printGrade();
+        
         class GradeTooHighException : public std::exception
         {
             public:
@@ -34,7 +36,6 @@ class Bureaucrat
         std::string _name;
         int _grade;
             
-     
 };
 
 

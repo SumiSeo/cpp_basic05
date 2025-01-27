@@ -49,24 +49,19 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
     return "Grade too row...";
 }
-std::string Bureaucrat::getName()
-{
-    return this->_name;
-};
 
-int Bureaucrat::getGrade()
-{
-    return this->_grade;
-};
 
 void Bureaucrat::increGrade()
 {
     this->_grade++;
+    std::cout<<"this : "<< this->getName() << this->getGrade()<<std::endl;
 };
 
 void Bureaucrat::decreGrade()
 {
     this->_grade--;
+    std::cout<<"this : "<< this->getName() << this->getGrade()<<std::endl;
+
 };
 
 void Bureaucrat::printGrade()
@@ -74,3 +69,18 @@ void Bureaucrat::printGrade()
     std::cout << this->_name <<", bureaucrat grade " << this->_grade <<std::endl;
 };
 
+std::string const &Bureaucrat::getName() const 
+{
+    return this->_name;
+};
+
+int Bureaucrat::getGrade() const 
+{
+    return this->_grade;
+};
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
+{
+	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade()<<std::endl;
+	return (out);
+}

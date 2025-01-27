@@ -8,18 +8,27 @@ int main()
     {
         try
         {
-            Bureaucrat b1("sumi",151);
+            Bureaucrat test("test",2);
+            std::cout << test << std::endl;
+
+
         }
         catch(const std::exception& e)
         {
-            std::cerr << "HERE :"<< e.what() << std::endl;;
+            std::cerr << e.what() << std::endl;;
         }
+        
+        Bureaucrat a("a",2);
+        Bureaucrat b("b",3);
+
+        a.increGrade();
+        b.decreGrade();
+        std::cout << a << std::endl;
+        std::cout << b << std::endl;
       
     }
-    catch(const std::exception& e)
+    catch(std::exception& e)
     {
-        /* handle exception */
-         // std::cout<< "Exception check : " << e-><<std::endl;
-        std::cout << " error: "<<std::endl;
+        std::cout << e.what()<<std::endl;
     }
 }
