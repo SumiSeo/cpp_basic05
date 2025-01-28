@@ -1,8 +1,15 @@
 #include <iostream>
-
+#include "Form.hpp"
 
 
 int main()
 {
-    std::cout <<" hi" << std::endl;
+    try
+    {
+        Form a();
+    }
+    catch(const std::exception &e)
+    {
+
+    }
 }

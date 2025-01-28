@@ -2,32 +2,31 @@
 
 void Form::beSigned(Bureaucrat &bureaucrat)
 {
-
+    if(bureaucrat.getGrade() <= this->_gradeForSign)
+        this->_isSigned = true;
 };
 
-Form::Form(void)
+Form::Form(void) : _name("default"), _isSigned(false), _gradeForSign(10),_gradeForExec(10)
 {
-    //default constructor
-
+   //default constructor
 };
 
-Form::Form(const Form &original)
+Form::Form(const std::string name, const int gradeForSign, const int gradeForExec) : _name(name), _isSigned(false), _gradeForSign(gradeForSign),_gradeForExec(gradeForExec)
 {
-    // this->_name = original._name;
-    this->_isSigned = original._isSigned;
-    // this->_gradeForSign = original._gradeForSign;
-    // this->_gradeForExec = original._gradeForExec;
+    
+};
+
+Form::Form(const Form &original) : _name(original.getName()), _isSigned(false), _gradeForSign(original.getGradeForSign()),_gradeForExec(original.getGradeForExec())
+{
+  //copy constructor
 
 };
 
 Form &Form::operator=(const Form &original)
 {
-    if(this != &original)
+    if(this == &original)
     {
-        // this->_name = original._name;
-        this->_isSigned = original._isSigned;
-        // this->_gradeForSign = original._gradeForSign;
-        // this->_gradeForExec = original._gradeForExec;
+        return *this;
     }
     return *this;
 };
@@ -37,18 +36,18 @@ Form::~Form(void)
     //destructor
 };
 
-class GradeTooLowException : public std::exception
+
+const char *Form::GradeTooLowException::what(void) const throw()
 {
-    public :
-        const char *what(void) const throw();
+    return "Level Too Low...";
 };
 
-class GradeTooHighException : public std::exception
-{
-    public:
-        const char *what(void) const throw();
 
+const char *Form::GradeTooHighException::what(void) const throw()
+{
+    return "Level Too High...";
 };
+
 
 const std::string &Form::getName() const
 {
@@ -57,23 +56,24 @@ const std::string &Form::getName() const
 
 const bool Form::checkIsSigned() const
 {
-    return true;
+    return this->_isSigned;
 };
 
 const int Form::getGradeForSign() const
 {
-    return 1;
+    return this->_gradeForSign;
 };
 
 const int Form::getGradeForExec() const
 {
-    return 1;
+    return this->_gradeForExec;
 };
 
 
 
 std::ostream &operator<<(std::ostream &out, const Form &form)
 {
-    out << form.getName() << ", bureaucart grade ";
+    out << form.getName() << ", form isSigned: " << form.checkIsSigned() << ", form grade for sign : " << form.getGradeForSign() 
+    << ", form grade for exec : " << form.getGradeForExec() << std::endl;
     return out;
 }

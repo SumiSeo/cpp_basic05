@@ -38,12 +38,12 @@ Bureaucrat::~Bureaucrat(void)
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-    return "Grade too high...";
+    return "Grade Too High...";
 }
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-    return "Grade too row...";
+    return "Grade Too Low...";
 }
 
 void Bureaucrat::increGrade()
@@ -83,5 +83,6 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 
 void Bureaucrat::signForm()
 {
-    std::cout << "<bureaucrat> signed <form>" << std::endl;
+    
+    std::cout << this->getName() <<" , signed " << std::endl;
 }
