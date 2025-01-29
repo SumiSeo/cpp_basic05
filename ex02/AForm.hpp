@@ -5,6 +5,7 @@
 #include <string>
 
 class Bureaucrat;
+
 class AForm
 {
     protected :
