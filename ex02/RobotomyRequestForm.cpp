@@ -1,6 +1,5 @@
 #include "RobotomyRequestForm.hpp"
 
-
 RobotomyRequestForm::RobotomyRequestForm(): _name("Robotomy"),  _isSigned(false), _gradeForSign(72),_gradeForExec(45)
 {
 (void)_isSigned;
