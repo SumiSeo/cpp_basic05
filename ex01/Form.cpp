@@ -4,23 +4,25 @@ void Form::beSigned(Bureaucrat &bureaucrat)
 {
     if(bureaucrat.getGrade() <= this->_gradeForSign)
         this->_isSigned = true;
+    else
+        throw Form::GradeTooLowException();
 };
 
-Form::Form(void) : _name("default"), _isSigned(false), _gradeForSign(10),_gradeForExec(10)
+Form::Form(void) : _name("Default"), _isSigned(false), _gradeForSign(10),_gradeForExec(10)
 {
-   //default constructor
+   // default constructor
 };
 
 Form::Form(const std::string name, const int gradeForSign, const int gradeForExec) : _name(name), _isSigned(false), _gradeForSign(gradeForSign),_gradeForExec(gradeForExec)
 {
-    
+    // custom constructor
 };
 
 Form::Form(const Form &original) : _name(original.getName()), _isSigned(false), _gradeForSign(original.getGradeForSign()),_gradeForExec(original.getGradeForExec())
 {
-  //copy constructor
-
-};
+    // copy constructor
+    // Form a = b;
+}
 
 Form &Form::operator=(const Form &original)
 {
@@ -69,11 +71,9 @@ const int Form::getGradeForExec() const
     return this->_gradeForExec;
 };
 
-
-
 std::ostream &operator<<(std::ostream &out, const Form &form)
 {
-    out << form.getName() << ", form isSigned: " << form.checkIsSigned() << ", form grade for sign : " << form.getGradeForSign() 
-    << ", form grade for exec : " << form.getGradeForExec() << std::endl;
+    out << "FORM name: " << form.getName() << ", FORM isSigned: " << form.checkIsSigned() << ", FORM sign grade: " << form.getGradeForSign() 
+    << ", FORM exec grade : " << form.getGradeForExec() << std::endl;
     return out;
 }

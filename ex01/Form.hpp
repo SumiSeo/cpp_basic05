@@ -4,6 +4,8 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 
+class Bureaucrat;
+
 class Form
 {
     private :
@@ -39,8 +41,6 @@ class Form
         const bool checkIsSigned() const;
         const int getGradeForSign() const;
         const int getGradeForExec() const;
-
-   
 
 };
 
