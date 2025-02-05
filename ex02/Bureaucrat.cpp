@@ -81,18 +81,8 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 }
 
 
-void Bureaucrat::signForm(AForm &form)
+void Bureaucrat::executeForm(AForm const & form)
 {
-    (void)form;
-    // if(form.checkIsSigned() == 1)
-    //     std::cout << this->getName() << ", signed " << form.getName() << std::endl;
-    // else
-    // {   
-    //     std::string reason;
-    //     if(form.getGradeForSign() < this->_grade)
-    //         reason = "bureau's grade is lower thant form's grade";
-    //     else
-    //         reason = "bureau's grade is higher thant form's grade";
-    //     std::cout << this->getName() << "couldn't sign " << form.getName() << "Because " << reason << std::endl;
-    // }
-}
+   form.execute(*this);
+   std::cout << this->getName() << " executed " << form.getName();
+};

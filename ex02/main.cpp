@@ -11,6 +11,7 @@ int main()
     {
         Bureaucrat b("b", 14);
         ShrubberyCreationForm s("target", b);
+        b.executeForm(s);
 
     }
     catch(const std::exception &e)

@@ -14,11 +14,13 @@ class AForm
         bool _isSigned;
         const int _gradeForSign;
         const int _gradeForExec;   
-        virtual void execute(Bureaucrat const & executor) const = 0;
 
     public :
         AForm();
         AForm(std::string const target);
+        bool getIsSigned() const;
+        const std::string getName() const ;
+        virtual void execute(Bureaucrat const & executor) const = 0;
         ~AForm();
 
 };
