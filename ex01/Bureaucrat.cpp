@@ -89,9 +89,9 @@ void Bureaucrat::signForm(Form &form)
     {   
         std::string reason;
         if(form.getGradeForSign() < this->_grade)
-            reason = "bureau's grade is lower thant form's grade";
+            reason = "bureau's grade is lower than form's grade";
         else
-            reason = "bureau's grade is higher thant form's grade";
-        std::cout << this->getName() << "couldn't sign " << form.getName() << "Because " << reason << std::endl;
+            reason = "bureau's grade is higher than form's grade";
+        std::cout << this->getName() << " couldn't sign " << form.getName() << "Because " << reason << std::endl;
     }
 }
