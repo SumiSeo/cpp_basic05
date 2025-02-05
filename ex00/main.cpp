@@ -13,6 +13,14 @@ int main()
 
         std::cout << a << std::endl;
         std::cout << b << std::endl;
+
+        // a.increGrade();
+        // std::cout << a << std::endl;
+        b.decreGrade();
+        std::cout << b << std::endl;
+
+
+
       
     }
     catch(std::exception& e)

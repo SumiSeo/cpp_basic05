@@ -54,3 +54,4 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
     else
         std::cout << "robotomy failed" << std::endl;
 };
+

@@ -31,7 +31,7 @@ bool AForm::getIsSigned() const
 
 const std::string  AForm::getName() const 
 {
-    return this->_name;
+    return "default";
 };
 
 AForm::AForm(std::string const target) : _target(target),_name("default form"), _isSigned(false), _gradeForSign(10),_gradeForExec(10)
