@@ -6,10 +6,9 @@
 
 int main()
 {
-    std::cout<< "test" << std::endl;
     try
     {
-        Bureaucrat b("b", 14);
+        Bureaucrat b("b", 149);
         ShrubberyCreationForm s("target", b);
         b.executeForm(s);
 

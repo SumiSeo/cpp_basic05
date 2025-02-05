@@ -59,6 +59,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
                                                   
     if(this->_isSigned && this->_gradeForExec > executor.getGrade())
     {
+      std::cout << "shrubbery exectued" << std::endl;
       std::string filename = this->_target +"_shurrubbery";
       std::ofstream outfile(filename.c_str());
       std::string contents = 	
