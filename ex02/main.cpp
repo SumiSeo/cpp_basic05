@@ -9,14 +9,16 @@ int main()
     try
     {
         Bureaucrat b("b", 15);
-        ShrubberyCreationForm s("target", b);
+        ShrubberyCreationForm s("yoi", b);
         b.executeForm(s);
 
-        Bureaucrat c("c", 44);
+        Bureaucrat c("c", 35);
         RobotomyRequestForm r("robot", c);
+        b.executeForm(r);
 
         Bureaucrat d("d", 1);
         PresidentialPardonForm p("president", d);
+        b.executeForm(p);
 
     }
     catch(const std::exception &e)
