@@ -9,7 +9,7 @@ int main()
     std::cout<< "test" << std::endl;
     try
     {
-        Bureaucrat b("b", 20);
+        Bureaucrat b("b", 14);
         ShrubberyCreationForm s("target", b);
 
     }
