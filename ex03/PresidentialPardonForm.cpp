@@ -10,6 +10,25 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const target) : _targ
         std::cout << "target constructor without bureau" << std::endl;
 };
 
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &original)
+{
+    if (this != &original)
+    {
+        this->_target = original._target;
+        this->_isSigned = original._isSigned;
+    }
+    return *this;
+}
+
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &original) 
+    : _target(original._target),
+      _isSigned(original._isSigned),
+      _gradeForSign(original._gradeForSign),
+      _gradeForExec(original._gradeForExec) 
+{
+}
+
 PresidentialPardonForm::PresidentialPardonForm(std::string const target, Bureaucrat const & executor): _target(target),_name("Presidential"), _isSigned(false), _gradeForSign(25),_gradeForExec(5)
 {
         if(executor.getGrade() < this->_gradeForSign)

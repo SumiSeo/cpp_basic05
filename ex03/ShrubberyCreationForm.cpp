@@ -23,6 +23,23 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const target, Bureaucra
    
 };
 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &original) : 
+      _gradeForSign(original._gradeForSign),
+      _gradeForExec(original._gradeForExec) 
+{
+    this->_target = original._target;
+    this->_isSigned = original._isSigned;
+};
+
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &original)
+{
+    if(this != &original)
+    {
+        this->_target = original._target;
+        this->_isSigned = original._isSigned;
+    }
+    return *this;
+};
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {

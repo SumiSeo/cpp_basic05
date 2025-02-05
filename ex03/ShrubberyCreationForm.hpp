@@ -20,6 +20,8 @@ class ShrubberyCreationForm : public AForm
     public :
         ShrubberyCreationForm();
         ShrubberyCreationForm(std::string const target);
+        ShrubberyCreationForm &operator=(const ShrubberyCreationForm &original);
+        ShrubberyCreationForm(const ShrubberyCreationForm &original);
         ShrubberyCreationForm(std::string const target, Bureaucrat const & executor);
         ~ShrubberyCreationForm();
 };

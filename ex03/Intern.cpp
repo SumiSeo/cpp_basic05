@@ -1,5 +1,7 @@
 #include "Intern.hpp"
-
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 Intern::Intern(void)
 {
@@ -29,12 +31,34 @@ Intern::~Intern(void)
 
 AForm* Intern::makeForm(const std::string name, const std::string target)
 {
-    AForm* form(name, target);
-    // form->_name = name;
-    // form->_target = target;
-    // (void)name;
-    // (void)target;
-    return form;
+   int i = 0;
+   std::string form_lists[] = {"ShrubberyForm", "RobotomyForm", "PresidentialForm"};
+
+   while(i < 3 && name != form_lists[i])
+        i++;
+   switch(i)
+   {
+    case 0:
+    {
+        std::cout << "Intern creates " << name << std::endl;
+        return (new ShrubberyCreationForm(target));
+    }
+    case 1:
+    {
+        std::cout << "Intern creates " << name << std::endl;
+        return (new RobotomyRequestForm(target));
+    }
+    case 2:
+    {
+        std::cout << "Intern creates " << name << std::endl;
+        return (new PresidentialPardonForm(target));
+    }
+    default :
+    {
+        std::cout << "Intern did not work today !" << std::endl;
+        return NULL;
+    }
+   }   
 };
 
     

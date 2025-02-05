@@ -17,6 +17,8 @@ class RobotomyRequestForm : public AForm
     public :
         RobotomyRequestForm();
         RobotomyRequestForm(std::string const target);
+        RobotomyRequestForm(const RobotomyRequestForm &origiinal);
+        RobotomyRequestForm &operator=(const RobotomyRequestForm &original);
         RobotomyRequestForm(std::string const target, Bureaucrat const & executor);
         ~RobotomyRequestForm();
 };

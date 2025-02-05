@@ -5,20 +5,9 @@ int main()
 {
     try
     {
-        try
-        {
-            Bureaucrat test("test",151);
-            std::cout << test << std::endl;
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }   
-        
         Bureaucrat a("a",2);
-        Bureaucrat b("b",3);
+        Bureaucrat b("b",149);
    
-
         a.increGrade();
         b.decreGrade();
 

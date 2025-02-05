@@ -7,8 +7,8 @@ class Bureaucrat
 {
     public:
         friend     std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
-        const static int _minGrade = 1;
-        const static int _maxGrade = 150;
+        const static int _maxGrade = 1;
+        const static int _minGrade = 150;
         Bureaucrat(void);
         Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat &original);

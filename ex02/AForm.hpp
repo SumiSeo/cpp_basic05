@@ -17,6 +17,8 @@ class AForm
 
     public :
         AForm();
+        AForm(const AForm &original);
+        AForm &operator=(const AForm &original); 
         AForm(std::string const target);
         bool getIsSigned() const;
         const std::string getName() const ;

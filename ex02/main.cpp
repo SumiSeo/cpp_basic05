@@ -8,7 +8,7 @@ int main()
 {
     try
     {
-        Bureaucrat b("b", 145);
+        Bureaucrat b("b", 15);
         ShrubberyCreationForm s("target", b);
         b.executeForm(s);
 

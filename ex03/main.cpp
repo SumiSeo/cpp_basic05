@@ -11,8 +11,7 @@ int main()
     {
         Intern someRandomIntern;
         AForm* rrf;
-        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-
+        rrf = someRandomIntern.makeForm("RobotomyForm", "Bender");
     }
     catch(const std::exception &e)
     {

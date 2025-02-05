@@ -84,7 +84,7 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 void Bureaucrat::signForm(Form &form)
 {
     if(form.checkIsSigned() == 1)
-        std::cout << this->getName() << ", signed " << form.getName() << std::endl;
+        std::cout << this->getName() << ", signed ! " << form.getName() << std::endl;
     else
     {   
         std::string reason;

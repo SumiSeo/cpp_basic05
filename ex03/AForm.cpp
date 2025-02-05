@@ -7,11 +7,22 @@ AForm::AForm():_name("default"), _isSigned(false), _gradeForSign(10),_gradeForEx
     (void)_gradeForExec;
 };
 
-AForm::AForm(std::string const name, std::string const target)
+AForm::AForm(const AForm &original) : _gradeForSign(original._gradeForSign),
+      _gradeForExec(original._gradeForExec) 
 {
-    this->_name = name;
-    this->_target = target;
+    this->_isSigned = original._isSigned;
 };
+
+AForm &AForm::operator=(const AForm &original)
+{
+    if(this != &original)
+    {
+        this->_isSigned = original._isSigned;
+       
+    }
+    return *this;
+}
+
 
 bool AForm::getIsSigned() const
 {

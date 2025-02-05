@@ -10,6 +10,25 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const target): _target(targ
     std::cout << "target constructor without bureau" << std::endl;
 };
 
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &original) : 
+      _gradeForSign(original._gradeForSign),
+      _gradeForExec(original._gradeForExec) 
+{
+    this->_target = original._target;
+    this->_isSigned = original._isSigned;
+};
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &original)
+{
+    if(this != &original)
+    {
+        this->_target = original._target;
+        this->_isSigned = original._isSigned;
+    }
+    return *this;
+};
+
+
 RobotomyRequestForm::RobotomyRequestForm(std::string const target, Bureaucrat const & executor): _target(target),_name("Robotomy"), _isSigned(false), _gradeForSign(72),_gradeForExec(45)
 {
     if(executor.getGrade() < this->_gradeForSign)

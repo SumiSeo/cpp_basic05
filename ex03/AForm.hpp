@@ -17,8 +17,9 @@ class AForm
 
     public :
         AForm();
+        AForm(const AForm &original);
+        AForm &operator=(const AForm &original); 
         AForm(std::string const target);
-        AForm(std::string const name, std::string const target);
         bool getIsSigned() const;
         const std::string getName() const ;
         virtual void execute(Bureaucrat const & executor) const = 0;
