@@ -7,7 +7,7 @@ PresidentialPardonForm::PresidentialPardonForm(): _name("Presidential"),  _isSig
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const target) : _target(target),_name("Presidential"), _isSigned(false), _gradeForSign(25),_gradeForExec(5)
 {
-        std::cout << "target constructor without bureau" << std::endl;
+    std::cout << "target constructor called : " << this->_target << std::endl;
 };
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &original)
@@ -46,7 +46,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const 
 {
-    if(this->_isSigned && this->_gradeForExec > executor.getGrade())
+    if(this->_gradeForExec > executor.getGrade())
     {
         std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
     }

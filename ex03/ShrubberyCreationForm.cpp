@@ -9,7 +9,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(): _name("Shrubbery"),  _isSigned(f
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : _target(target),_name("Shrubbery"), _isSigned(false), _gradeForSign(145),_gradeForExec(137)
 {
-    std::cout << "target constructor without bureau" << std::endl;
+    std::cout << "target constructor called : " << this->_target << std::endl;
 };
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const target, Bureaucrat const & executor) : _target(target),_name("Shrubbery"), _isSigned(false), _gradeForSign(145),_gradeForExec(137)
@@ -49,7 +49,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
                                                   
-    if(this->_isSigned && this->_gradeForExec > executor.getGrade())
+    if(this->_gradeForExec > executor.getGrade())
     {
       std::cout << "shrubbery exectued" << std::endl;
       std::string filename = this->_target +"_shurrubbery";

@@ -9,17 +9,27 @@ int main()
 {
     try
     {
-        Intern someRandomIntern;
-        AForm* rrf;
-        rrf = someRandomIntern.makeForm("RobotomyForm", "Bender");
+        Intern RandomIntern1;
+        AForm* rrf1;
+        rrf1 = RandomIntern1.makeForm("RobotomyForm", "Bender");
 
-        Intern Jr_Intern;
-        AForm *robo_intern;
+        Bureaucrat a("a",47);
+        rrf1->execute(a);
 
-        robo_intern = Jr_Intern.makeForm("DoYouKnowMe", "Hmmmm");
-        robo_intern = Jr_Intern.makeForm("RobotomyForm", "World");
+        Intern RandomIntern2;
+        AForm* rrf2;
+        rrf2 = RandomIntern2.makeForm("ShrubberyForm", "Sumi");
 
-        std::cout << robo_intern->getName() << std::endl;
+        Bureaucrat b("b",1);
+        rrf2->execute(b);
+
+        Intern RandomIntern3;
+        AForm* rrf3;
+        rrf3 = RandomIntern3.makeForm("PresidentialForm", "Sumi");
+
+        Bureaucrat c("c",148);
+        rrf3->execute(c);
+
     }
     catch(const std::exception &e)
     {

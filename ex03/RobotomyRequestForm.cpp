@@ -7,7 +7,7 @@ RobotomyRequestForm::RobotomyRequestForm(): _name("Robotomy"),  _isSigned(false)
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const target): _target(target),_name("Robotomy"), _isSigned(false), _gradeForSign(72),_gradeForExec(45)
 {
-    std::cout << "target constructor without bureau" << std::endl;
+    std::cout << "target constructor called : " << this->_target << std::endl;
 };
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &original) : 
@@ -46,7 +46,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const 
 {
-    if(this->_isSigned && this->_gradeForExec > executor.getGrade())
+    if(this->_gradeForExec > executor.getGrade())
     {
         std::cout << "drill drill" << std::endl;
         std::cout << this->_target << " has been robotomized successfuly 50 of the time" << std::endl;
