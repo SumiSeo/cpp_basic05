@@ -8,9 +8,15 @@ int main()
 {
     try
     {
-        Bureaucrat b("b", 149);
+        Bureaucrat b("b", 145);
         ShrubberyCreationForm s("target", b);
         b.executeForm(s);
+
+        Bureaucrat c("c", 44);
+        RobotomyRequestForm r("robot", c);
+
+        Bureaucrat d("d", 1);
+        PresidentialPardonForm p("president", d);
 
     }
     catch(const std::exception &e)
