@@ -27,10 +27,14 @@ Intern::~Intern(void)
 };
 
 
-void Intern::makeForm(const std::string name, const std::string target)
+AForm* Intern::makeForm(const std::string name, const std::string target)
 {
-    (void)name;
-    (void)target;
+    AForm* form(name, target);
+    // form->_name = name;
+    // form->_target = target;
+    // (void)name;
+    // (void)target;
+    return form;
 };
 
     

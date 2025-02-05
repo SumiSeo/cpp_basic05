@@ -6,13 +6,11 @@
 
 class Intern
 {
-
-    private:
-        void makeForm(const std::string name, const std::string target);
     
     public:
         Intern(void);
         Intern(const Intern &original);
+        AForm *makeForm(const std::string name, const std::string target);
         Intern &operator=(const Intern &original);
         ~Intern(void);
 };
