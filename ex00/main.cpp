@@ -8,8 +8,8 @@ int main()
         Bureaucrat a("a",2);
         Bureaucrat b("b",149);
    
-        a.increGrade();
-        b.decreGrade();
+        // a.increGrade();
+        // b.decreGrade();
 
         std::cout << a << std::endl;
         std::cout << b << std::endl;
@@ -17,6 +17,7 @@ int main()
         // a.increGrade();
         // std::cout << a << std::endl;
         b.decreGrade();
+
         std::cout << b << std::endl;
 
 
