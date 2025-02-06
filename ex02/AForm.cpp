@@ -1,5 +1,6 @@
 #include "AForm.hpp"
 
+
 AForm::AForm():_name("default"), _isSigned(false), _gradeForSign(10),_gradeForExec(10)
 {
     (void)_isSigned;

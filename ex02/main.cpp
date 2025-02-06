@@ -14,11 +14,11 @@ int main()
 
         Bureaucrat c("c", 35);
         RobotomyRequestForm r("robot", c);
-        b.executeForm(r);
+        c.executeForm(r);
 
         Bureaucrat d("d", 1);
         PresidentialPardonForm p("president", d);
-        b.executeForm(p);
+        d.executeForm(p);
 
     }
     catch(const std::exception &e)
