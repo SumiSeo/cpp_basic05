@@ -17,11 +17,9 @@ int main()
         // a.increGrade();
         // std::cout << a << std::endl;
         b.decreGrade();
+        b.decreGrade();
 
         std::cout << b << std::endl;
-
-
-
       
     }
     catch(std::exception& e)

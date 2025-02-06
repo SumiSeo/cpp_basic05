@@ -6,8 +6,8 @@ int main()
 {
     try
     {
-        Bureaucrat bureaucrat("Bureau 1", 5);
-        Form f("Validation Form", 10, 40);
+        Bureaucrat bureaucrat("Bureau 1", 2);
+        Form f("Validation Form", 3, 40);
         std::cout << f <<std::endl;
         f.beSigned(bureaucrat);
         std::cout << f <<std::endl;

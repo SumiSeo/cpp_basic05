@@ -4,8 +4,7 @@ void Form::beSigned(Bureaucrat &bureaucrat)
 {
     if(bureaucrat.getGrade() <= this->_gradeForSign)
         this->_isSigned = true;
-    else
-        throw Form::GradeTooLowException();
+
 };
 
 Form::Form(void) : _name("Default"), _isSigned(false), _gradeForSign(10),_gradeForExec(10)
