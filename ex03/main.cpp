@@ -15,9 +15,9 @@ int main()
     {
         //ShrubberyForm, RobotomyForm, PresidentialForm
         Intern someRandomIntern;
-        rrf = someRandomIntern.makeForm("ShrubberyForm", "nder");
-        Bureaucrat b("sumi", 145);
-        rrf->execute(b);
+        rrf = someRandomIntern.makeForm("ShrubberyForm", "yo");
+        Bureaucrat b("sumi", 15);
+        // rrf->execute(b);
 
         
         Intern testIntern;
