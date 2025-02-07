@@ -18,11 +18,11 @@ int main()
         b.executeForm(*s);
 
         Bureaucrat c("c", 17);
-        r = new RobotomyRequestForm("robot", c);
+        r = new RobotomyRequestForm("squid", c);
         c.executeForm(*r);
 
         Bureaucrat d("d", 1);
-        p = new PresidentialPardonForm("president", d);
+        p = new PresidentialPardonForm("yoon", d);
         d.executeForm(*p);
     } 
 
