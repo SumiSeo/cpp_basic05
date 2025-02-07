@@ -8,21 +8,31 @@
 int main()
 {
   
+    AForm* rrf = NULL;
+    AForm* rrff = NULL;
+
     try
     {
         //ShrubberyForm, RobotomyForm, PresidentialForm
         Intern someRandomIntern;
-        AForm* rrf;
         rrf = someRandomIntern.makeForm("ShrubberyForm", "nder");
-        Bureaucrat b("sumi",1);
+        Bureaucrat b("sumi", 145);
         rrf->execute(b);
-        delete rrf;
+
+        
+        Intern testIntern;
+        rrff = testIntern.makeForm("PresidentialForm", "sumi");
+        Bureaucrat c("pierre", 80);
+        rrff->execute(c);
+
 
     }
     catch(const std::exception &e)
     {
         std::cerr << e.what() << std::endl;
-   
     }
+
+    delete rrf;
+    delete rrff;
     return 0;
 }
