@@ -54,3 +54,8 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
     else
         std::cout << "presidential failed" << std::endl;
 };
+
+std::string PresidentialPardonForm::getName() const 
+{
+    return this->_name;
+};

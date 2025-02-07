@@ -54,3 +54,8 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
     else
         std::cout << "robotomy failed" << std::endl;
 };
+
+std::string RobotomyRequestForm::getName() const 
+{
+    return this->_name;
+};
