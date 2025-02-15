@@ -12,9 +12,10 @@ class PresidentialPardonForm : public AForm
         bool _isSigned;
         const int _gradeForSign;
         const int _gradeForExec;   
-        void execute(Bureaucrat const & executor) const;
 
     public :
+        void execute(Bureaucrat const & executor) const;
+        std::string getName() const;
         PresidentialPardonForm();
         PresidentialPardonForm(const PresidentialPardonForm &original);
         PresidentialPardonForm &operator=(const PresidentialPardonForm &original);

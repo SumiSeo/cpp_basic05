@@ -7,32 +7,32 @@
 
 int main()
 {
+  
+    AForm* rrf = NULL;
+    AForm* rrff = NULL;
+
     try
     {
-        Intern RandomIntern1;
-        AForm* rrf1;
-        rrf1 = RandomIntern1.makeForm("RobotomyForm", "Bender");
+        //ShrubberyForm, RobotomyForm, PresidentialForm
+        Intern someRandomIntern;
+        rrf = someRandomIntern.makeForm("ShrubberyForm", "yo");
+        Bureaucrat b("sumi", 15);
+        // rrf->execute(b);
 
-        Bureaucrat a("a",47);
-        rrf1->execute(a);
+        
+        Intern testIntern;
+        rrff = testIntern.makeForm("PresidentialForm", "sumi");
+        Bureaucrat c("pierre", 80);
+        rrff->execute(c);
 
-        Intern RandomIntern2;
-        AForm* rrf2;
-        rrf2 = RandomIntern2.makeForm("ShrubberyForm", "Sumi");
-
-        Bureaucrat b("b",1);
-        rrf2->execute(b);
-
-        Intern RandomIntern3;
-        AForm* rrf3;
-        rrf3 = RandomIntern3.makeForm("PresidentialForm", "Sumi");
-
-        Bureaucrat c("c",148);
-        rrf3->execute(c);
 
     }
     catch(const std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }
+
+    delete rrf;
+    delete rrff;
+    return 0;
 }

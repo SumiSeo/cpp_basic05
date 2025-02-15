@@ -7,10 +7,10 @@ Bureaucrat::Bureaucrat(void)
 
 };
 
-Bureaucrat::Bureaucrat(std::string const name, int grade)
+Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name)
 {
 
-    this->_name = name;
+   
     this->_grade = 0 + grade;
     if(this->_grade < _maxGrade)
         throw Bureaucrat::GradeTooHighException();
@@ -19,10 +19,9 @@ Bureaucrat::Bureaucrat(std::string const name, int grade)
 
 };
 
-Bureaucrat::Bureaucrat(const Bureaucrat &original)
+Bureaucrat::Bureaucrat(const Bureaucrat &original) :_name(original._name)
 {
     this->_grade = original._grade;
-    this->_name = original._name;
 };
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &original)
@@ -30,7 +29,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &original)
     if(this != &original)
     {
         this->_grade = original._grade;
-        this->_name = original._name;
     }
     return *this;
 };

@@ -15,15 +15,17 @@ class ShrubberyCreationForm : public AForm
         bool _isSigned;
         const int _gradeForSign;
         const int _gradeForExec;   
-        void execute(Bureaucrat const & executor) const;
 
     public :
+        std::string getName() const ;
         ShrubberyCreationForm();
         ShrubberyCreationForm(const ShrubberyCreationForm &origiinal);
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &original);
         ShrubberyCreationForm(std::string const target);
         ShrubberyCreationForm(std::string const target, Bureaucrat const & executor);
-        ~ShrubberyCreationForm();
+        virtual ~ShrubberyCreationForm();
+        void execute(Bureaucrat const & executor) const;
+
 };
 
 #endif 

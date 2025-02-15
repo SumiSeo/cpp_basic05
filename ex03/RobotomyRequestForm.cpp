@@ -7,7 +7,7 @@ RobotomyRequestForm::RobotomyRequestForm(): _name("Robotomy"),  _isSigned(false)
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const target): _target(target),_name("Robotomy"), _isSigned(false), _gradeForSign(72),_gradeForExec(45)
 {
-    std::cout << "target constructor called : " << this->_target << std::endl;
+    std::cout << "target constructor without bureau" << std::endl;
 };
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &original) : 
@@ -55,3 +55,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
         std::cout << "robotomy failed" << std::endl;
 };
 
+std::string RobotomyRequestForm::getName() const 
+{
+    return this->_name;
+};

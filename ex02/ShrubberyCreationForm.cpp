@@ -49,7 +49,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-                                                  
+
     if(this->_isSigned && this->_gradeForExec > executor.getGrade())
     {
       std::string filename = this->_target +"_shurrubbery";
@@ -84,4 +84,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     else
         throw Bureaucrat::GradeTooLowException();
 
+};
+
+
+std::string ShrubberyCreationForm::getName() const 
+{
+    return this->_name;
 };

@@ -2,6 +2,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <stdexcept> 
 
 Intern::Intern(void)
 {
@@ -56,8 +57,8 @@ AForm* Intern::makeForm(const std::string name, const std::string target)
     default :
     {
         std::cout << "Intern did not work today !" << std::endl;
-        return NULL;
     }
+    throw std::runtime_error("Intern could not create form: " + name);
    }   
 };
 

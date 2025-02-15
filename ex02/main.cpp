@@ -6,23 +6,33 @@
 
 int main()
 {
-    try
-    {
-        Bureaucrat b("b", 15);
-        ShrubberyCreationForm s("yoi", b);
-        b.executeForm(s);
 
-        Bureaucrat c("c", 35);
-        RobotomyRequestForm r("robot", c);
-        b.executeForm(r);
+    AForm* s = NULL;
+    AForm* r = NULL;
+    AForm* p = NULL;
+    
+    try 
+    {
+        Bureaucrat b("b", 14);
+        s = new ShrubberyCreationForm("yoi", b);
+        b.executeForm(*s);
+
+        Bureaucrat c("c", 17);
+        r = new RobotomyRequestForm("squid", c);
+        c.executeForm(*r);
 
         Bureaucrat d("d", 1);
-        PresidentialPardonForm p("president", d);
-        b.executeForm(p);
+        p = new PresidentialPardonForm("yoon", d);
+        d.executeForm(*p);
+    } 
 
-    }
-    catch(const std::exception &e)
-    {
+    catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;
     }
+
+    delete s;
+    delete r;
+    delete p;
+
+    return 0;
 }
